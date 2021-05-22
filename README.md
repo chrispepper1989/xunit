@@ -1,3 +1,36 @@
+## Goal Of this fork
+To add a mocha-esc Feature -> Scenario / Describe -> It layout
+
+Similar in goal to http://nspec.org/ but hoping (in vain?) to take advantage of current xunit runner. Syntactically I would also like it to be a bit more C#-esc. Current syntax goal is
+
+```
+class MyClassSpec
+{
+	[Test]
+	void TestingMyClass()
+	{
+		MyClass toTest;
+		
+		Describe("IsEven function", () =>
+		{
+			//set up
+			toTest = new MyClass();
+		}).
+		It("Returns Even when function sent 2", () =>
+		{
+			toTest.IsEven(2).Should().Be().True();
+		}).
+		It("Returns Odd when function sent Odd Number, (int number) =>
+		{
+			toTest.IsEven(number).Should().Be().False();
+		}, parameters: (3,5,7))
+	
+		
+	}
+}
+```
+
+
 ## About xUnit.net
 
 [<img align="right" width="100px" src="https://dotnetfoundation.org/img/logo_big.svg" />](https://dotnetfoundation.org/projects?searchquery=xunit&type=project)
